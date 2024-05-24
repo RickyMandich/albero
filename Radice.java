@@ -5,9 +5,17 @@ public class Radice{
     Radice(){
         System.out.println("come si chiama questo nodo?");
         nome = getString();
-        System.out.println("vuoi aggiungere un figlio?");
+        System.out.println("vuoi aggiungere un figlio a " + nome + "?");
         if(getBoolean()){
             figlio = new Nodo(1);
+        }
+    }
+    Radice(int profondita){
+        System.out.println("come si chiama questo nodo?");
+        nome = getString();
+        System.out.println("vuoi aggiungere un figlio a " + nome + "?");
+        if(getBoolean()){
+            figlio = new Nodo(profondita + 1);
         }
     }
 
@@ -28,9 +36,9 @@ public class Radice{
 
     @Override
     public String toString(){
-        String info = super.toString() + "\n";
+        String info = "\n";
         info += "Nome: " + nome + "\n";
-        info += figlio;
+        info += figlio != null ? figlio : "";
         return info;
     }
 }
