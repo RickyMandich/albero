@@ -1,10 +1,12 @@
+import java.util.Scanner;
+
 public class Radice{
     String nome;
     Nodo figlio;
 
     Radice(){
         System.out.println("come si chiama questo nodo?");
-        nome = getString();
+        nome = getString().toUpperCase();
         System.out.println("vuoi aggiungere un figlio a " + nome + "?");
         if(getBoolean()){
             figlio = new Nodo(1);
@@ -12,7 +14,7 @@ public class Radice{
     }
     Radice(int profondita){
         System.out.println("come si chiama questo nodo?");
-        nome = getString();
+        nome = getString().toUpperCase();
         System.out.println("vuoi aggiungere un figlio a " + nome + "?");
         if(getBoolean()){
             figlio = new Nodo(profondita + 1);
@@ -28,7 +30,9 @@ public class Radice{
     }
     public static String getString(){
         try{
-            return new java.util.Scanner(System.in).nextLine();
+            String ret = new Scanner(System.in).nextLine();
+            if(ret.isEmpty()) throw new java.util.InputMismatchException("No");
+            return ret;
         }catch (java.util.InputMismatchException e){
             return getString();
         }

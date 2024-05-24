@@ -15,7 +15,7 @@ public class Nodo extends Radice{
     public String toString(){
         String indentazione = "";
         for(int i = 0; i < profondita; i++){
-            indentazione = indentazione.concat("----");
+            indentazione = indentazione.concat(i+1==profondita ? "|---" : "----");
         }
         String info = "";
         info += indentazione + "Nome: " + nome + "\n";
