@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Radice{
     String nome;
     Nodo figlio;
@@ -31,7 +29,7 @@ public class Radice{
     }
     public static String getString(){
         try{
-            String ret = new Scanner(System.in).nextLine();
+            String ret = new java.util.Scanner(System.in).nextLine();
             if(ret.isEmpty()) throw new java.util.InputMismatchException("No");
             return ret;
         }catch (java.util.InputMismatchException e){
