@@ -23,6 +23,7 @@ public class Radice{
 
     public static boolean getBoolean(){
         try{
+            System.out.println("inserisci un vaore booleano nel formato \"true\"/\"false\"");
             return new java.util.Scanner(System.in).nextBoolean();
         }catch (java.util.InputMismatchException e){
             return getBoolean();
